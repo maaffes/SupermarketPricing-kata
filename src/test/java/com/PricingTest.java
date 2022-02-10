@@ -79,9 +79,5 @@ public class PricingTest {
 	    assertEquals(10.0, total, DELTA);
 	
 	}
-	public void test_data() {
-		
-		
-	}
 	
 }
