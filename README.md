@@ -15,7 +15,7 @@ The exercise is to experiment with a model that is flexible enough to deal with 
 Creating three functions that allows calculating price of each product including his offer .
 
 
-• GetDiscountPricingThirdForFree calculate a total products's price when offer is three for a dollar
+• GetDiscountPricingThirdForFree calculate a total products's price when offer is "Buy two, get one free"
 
 • GetDiscountPricingThreeFor calculate a total products's price when the offer is "three for price"
 
