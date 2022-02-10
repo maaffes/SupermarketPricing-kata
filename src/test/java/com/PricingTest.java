@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class PricingTest {
 	private static final double DELTA = 1e-15;
+	//creating four products's instances
 	private Product product1=new Product("product1",1.0);
 	private Product product2=new Product("product2",3.0);
 	private Product product3=new Product("product3",4.0);
@@ -29,13 +30,14 @@ public class PricingTest {
     private List<Discount> listDiscount= new ArrayList<Discount>();
     
 	@Test
-	public void pricing_test_third_free() {
+	public void pricing_test_third_free() throws Exception {
 		
+		//insert into productQuantities list products with quantity 
 		productQuantities.add(new ProductQuantity( product1, 5));
 		productQuantities.add(new ProductQuantity( product2, 3));
 		productQuantities.add(new ProductQuantity(product3, 2));
 
-		
+		// insert into listDiscount list product with his offer
 		listDiscount.add(new Discount(Offer.ThirdForFree,product1));
 		listDiscount.add(new Discount(Offer.ThreeForAmount,product2));
 		listDiscount.add(new Discount(Offer.NoOffer,product3));
@@ -45,12 +47,13 @@ public class PricingTest {
 	}
 	
 	@Test
-	public void three_amount_discount() {
+	public void three_amount_discount() throws Exception {
+		//insert into productQuantities list products with quantity
 		productQuantities.add(new ProductQuantity( product1, 5));
 		productQuantities.add(new ProductQuantity( product2, 3));
 		productQuantities.add(new ProductQuantity(product3, 2));
 
-		
+		// insert into listDiscount list product with his offer
 		listDiscount.add(new Discount(Offer.ThreeForAmount,product1));
 		listDiscount.add(new Discount(Offer.ThirdForFree,product2));
 		listDiscount.add(new Discount(Offer.NoOffer,product3));
@@ -60,13 +63,14 @@ public class PricingTest {
 	}
 	
 	@Test
-	public void pricing_test_no_offer() {
-		
+	public void pricing_test_no_offer() throws Exception {
+		//insert into productQuantities list products with quantity
 		productQuantities.add(new ProductQuantity( product1, 5));
 		productQuantities.add(new ProductQuantity( product2, 3));
 		productQuantities.add(new ProductQuantity(product3, 2));
 		productQuantities.add(new ProductQuantity(product4, 1));
-
+		
+		// insert into listDiscount list product with his offer
 		listDiscount.add(new Discount(Offer.ThirdForFree,product1));
 		listDiscount.add(new Discount(Offer.ThreeForAmount,product2));
 		listDiscount.add(new Discount(Offer.NoOffer,product3));
@@ -74,6 +78,10 @@ public class PricingTest {
 		double  total=  Pricing.getPricingNoOffer(listDiscount,productQuantities);	
 	    assertEquals(10.0, total, DELTA);
 	
+	}
+	public void test_data() {
+		
+		
 	}
 	
 }
